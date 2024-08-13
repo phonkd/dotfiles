@@ -4,6 +4,7 @@ if [ ! -f "/home/phonkd/.config/chezmoi/key.txt" ]; then
     mkdir -p "/home/phonkd/.config/chezmoi"
     chezmoi age decrypt --output "/home/phonkd/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
     chmod 600 "/home/phonkd/.config/chezmoi/key.txt"
+    echo "huso" > /tmp/huso
 fi
 {{- end }}
 {{- if eq .chezmoi.hostname "instability" }}
