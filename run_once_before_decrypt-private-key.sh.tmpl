@@ -1,16 +1,6 @@
 #!/bin/sh
-{{- if eq .chezmoi.hostname "immortality" }}
-if [ ! -f "/home/phonkd/.config/chezmoi/key.txt" ]; then
-    mkdir -p "/home/phonkd/.config/chezmoi"
-    chezmoi age decrypt --output "/home/phonkd/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
-    chmod 600 "/home/phonkd/.config/chezmoi/key.txt"
-    echo "huso" > /tmp/huso
+if [ ! -f "~/.config/chezmoi/key.txt" ]; then
+    mkdir -p "~/.config/chezmoi"
+    chezmoi age decrypt --output "~/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
+    chmod 600 "~/.config/chezmoi/key.txt"
 fi
-{{- end }}
-{{- if eq .chezmoi.hostname "instability" }}
-if [ ! -f "/home/kek/.config/chezmoi/key.txt" ]; then
-    mkdir -p "/home/kek/.config/chezmoi"
-    chezmoi age decrypt --output "/home/kek/.config/chezmoi/key.txt" --passphrase "{{ .chezmoi.sourceDir }}/key.txt.age"
-    chmod 600 "/home/kek/.config/chezmoi/key.txt"
-fi
-{{- end }}
