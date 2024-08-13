@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ ! -f "~/.config/chezmoi/key.txt" ]; then
+    mkdir -p "~/.config/chezmoi"
+    chezmoi age decrypt --output "~/.config/chezmoi/key.txt" --passphrase "~/.local/share/chezmoi/key.txt.age"
+    chozmoistinkt="$(realpath ~/.config/chezmoi/key.txt)"
+    chmod 600 $chozmoistinkt
+fi
+# adsf
