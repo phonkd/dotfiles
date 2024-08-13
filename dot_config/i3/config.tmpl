@@ -100,15 +100,11 @@ bindsym $mod+r mode "resize"
 # gaps
 gaps inner 11px
 gaps outer 11px
-#grafigch
-exec --no-startup-id xrandr --output DP-4 --mode 2560x1440 --rate 144 --rotate right --right-of DP-0
-exec --no-startup-id xrandr --output DP-0 --primary --mode 2560x1440 --rate 144
 default_floating_border none
 
 ### Install ttf-nerdfont-symbols to get the symbols to work
 exec_always ~/.config/polybar/launch.sh --forest
 exec_always nitrogen --restore
-exec_always autorandr -c
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #695B7C #C396FF #000000 #695B7C   #695B7C
@@ -149,3 +145,14 @@ exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec_always --no-startup-id /bin/easyeffects --gapplication-service
 exec_always --no-startup-id /usr/bin/ulauncher
 
+# ---------------------device specific --------------------------
+
+{{- if eq .chezmoi.hostname "instability" }}
+bindsym $mod+i exec light -A 5
+bindsym $mod+Shift+i exec light -U 5
+exec_always autorandr -c
+{{- end }}
+
+{{- if eq .chezmoi.hostname "immortality" }}
+# nothing yet but possibly xrandr
+{{- end }}
