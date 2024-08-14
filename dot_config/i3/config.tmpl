@@ -123,7 +123,7 @@ bindsym $mod+Shift+n exec --no-startup-id playerctl previous
 bindsym $mod+b exec --no-startup-id playerctl play-pause
 bindsym $mod+m exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Shift+m exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym $mod+0 exec --no-startup-id rofi -show rofi-sound -modi "rofi-sound:rofi-sound-output-chooser"
+bindsym $mod+0 exec --no-startup-id rofi -show rofi-sound -modi "rofi-sound:~/.config/i3/rofi-sound-output-chooser"
 bindsym $mod+d exec --no-startup-id ulauncher-toggle 
 bindsym $mod+q kill
 bindsym $mod+Shift+q exec --no-startup-id xkill
@@ -144,7 +144,6 @@ exec --no-startup-id /bin/bash eval $(ssh-agent)
 exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec_always --no-startup-id /bin/easyeffects --gapplication-service
 exec_always --no-startup-id /usr/bin/ulauncher
-<<<<<<< HEAD:dot_config/i3/config.tmpl
 
 # ---------------------device specific --------------------------
 
@@ -157,6 +156,4 @@ exec_always autorandr -c
 {{- if eq .chezmoi.hostname "immortality" }}
 # nothing yet but possibly xrandr
 {{- end }}
-=======
 #
->>>>>>> c8012cf (fix rofi sound output chooser):dot_config/i3/config
