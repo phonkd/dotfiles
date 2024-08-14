@@ -148,9 +148,9 @@ exec_always --no-startup-id /usr/bin/ulauncher
 
 # ---------------------device specific --------------------------
 
-{{- if eq .chezmoi.hostname "instability" }}
-bindsym $mod+i exec light -A 5
-bindsym $mod+Shift+i exec light -U 5
+{{- if ne .chezmoi.hostname "immortality" }}
+bindsym $mod+i exec brightnessctl set +2%
+bindsym $mod+Shift+i exec brightnessctl set 2%-
 exec_always autorandr -c
 {{- end }}
 
