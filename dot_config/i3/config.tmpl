@@ -144,6 +144,7 @@ exec --no-startup-id /bin/bash eval $(ssh-agent)
 exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec_always --no-startup-id /bin/easyeffects --gapplication-service
 exec_always --no-startup-id /usr/bin/ulauncher
+<<<<<<< HEAD:dot_config/i3/config.tmpl
 
 # ---------------------device specific --------------------------
 
@@ -156,3 +157,6 @@ exec_always autorandr -c
 {{- if eq .chezmoi.hostname "immortality" }}
 # nothing yet but possibly xrandr
 {{- end }}
+=======
+#
+>>>>>>> c8012cf (fix rofi sound output chooser):dot_config/i3/config
