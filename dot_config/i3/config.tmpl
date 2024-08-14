@@ -8,7 +8,8 @@ exec --no-startup-id nm-applet
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -o font.size=12
+bindsym $mod+Shift+Return exec alacritty -o font.size=12
+bindsym $mod+Return exec kitty --config ~/.config/kitty/kitty.conf
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
