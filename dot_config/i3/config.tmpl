@@ -1,3 +1,4 @@
+# modifier key
 set $mod Mod4
 font pango:monospace 12
 exec --no-startup-id dex --autostart --environment i3
@@ -32,7 +33,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+shift+s layout stacking
 bindsym $mod+shift+w layout tabbed
-bindsym $mod+shift+p layout toggle split
+bindsym $mod+shift+x layout toggle split
 # toggle tiling / floating
 bindsym $mod+space floating toggle
 # change focus between tiling / floating windows
@@ -107,14 +108,52 @@ default_floating_border none
 exec_always ~/.config/polybar/launch.sh --forest
 exec_always nitrogen --restore
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #695B7C #C396FF #000000 #695B7C   #695B7C
-client.focused_inactive #333333 #9F89BC #ffffff #484e50   #5f676a
-client.unfocused        #9F89BC #9F89BC #C9C8CC #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+{{- if eq .chezmoi.hostname "raiw" }}
+# i3 color theme based on Kitty theme
 
-client.background       #ffffff
+# Background and foreground colors
+set $bg-color #1b1d1e
+set $fg-color #6e6e6e
+set $cursor-color #fcee0b
+
+# Border colors
+set $border-color #1b1d1e
+set $focused-border-color #1b1d1e
+set $focused-bg-color #1b1d1e
+set $focused-fg-color #f3fd21
+
+# Colors for the status bar
+set $status-bg-color #1b1d1e
+set $status-fg-color #6e6e6e
+
+# Colors for the window titles
+set $title-bg-color #c5c5be
+set $title-fg-color #f3fd21
+
+# Color palette
+set $color0 #1b1d1e
+set $color1 #e6db43
+set $color2 #c8be46
+set $color3 #f3fd21
+set $color4 #737074
+set $color5 #737271
+set $color6 #615f5e
+set $color7 #c5c5be
+set $color8 #505354
+set $color9 #fff68d
+set $color10 #fff27c
+set $color11 #feed6c
+set $color12 #909495
+set $color13 #9a999d
+set $color14 #a2a2a5
+set $color15 #dadad5
+
+# Window colors
+client.focused          $focused-border-color $focused-bg-color $focused-fg-color
+client.unfocused        $border-color $bg-color $fg-color
+client.placeholder      $color8 $bg-color $fg-color
+client.focused_inactive $border-color $bg-color $fg-color
+{{ end }}
 
 # ------------------------- Binds ------------------------------
 
@@ -131,7 +170,8 @@ bindsym $mod+Shift+q exec --no-startup-id xkill
 bindsym $mod+y exec i3lock
 bindsym $mod+c exec flameshot gui
 bindsym $mod+e exec nemo
-
+bindsym $mod+shift+p exec arandr
+bindsym $mod+p exec xrandr --auto
 #ssh
 exec --no-startup-id /bin/bash eval $(ssh-agent)
 #wallpaper
