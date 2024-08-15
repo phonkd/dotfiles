@@ -180,9 +180,7 @@ exec --no-startup-id /bin/bash eval $(ssh-agent)
 #default_border none
 
 
-{{- if ne .chezmoi.hostname "raiw" }}
 exec_always --no-startup-id picom --config ~/.config/picom.conf
-{{- end }}
 exec_always --no-startup-id /bin/easyeffects --gapplication-service
 exec_always --no-startup-id /usr/bin/ulauncher
 
