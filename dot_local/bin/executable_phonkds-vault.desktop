@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=raiw-vault
+Name=Phonkds-vault
 Exec=/usr/bin/obsidian obsidian://open?vault=Phonkds-vault
 Terminal=false
 Type=Application
