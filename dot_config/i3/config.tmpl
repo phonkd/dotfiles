@@ -190,7 +190,6 @@ bindsym $mod+Shift+i exec brightnessctl set 2%-
 exec_always autorandr -c
 {{- end }}
 
-{{- if eq .chezmoi.hostname "immortality" }}
-# nothing yet but possibly xrandr
-{{- end }}
-#
+# --------------------- ENV -----------------------#
+
+exec export PATH="$PATH:$HOME/.local/bin"
