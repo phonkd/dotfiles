@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=gibb-vault
+Exec=/usr/bin/obsidian obsidian://open?vault=gibb
+Terminal=false
+Type=Application
+Icon=obsidian
+StartupWMClass=obsidian
+Comment=Obsidian
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
