@@ -1,13 +1,13 @@
 {
     "output": "eDP-1",
-    "height": 22, // Waybar height (to be removed for auto height)
+    // "height": 22, // Waybar height (to be removed for auto height)
     "spacing": 6, // Gaps between modules (4px)
     "modules-left": ["network", "bluetooth", "pulseaudio", "backlight"],
     "modules-center": ["clock"],
     "modules-right": ["custom/spotify-metadata", "cpu", "memory", "battery"],
     "margin-top": 6,
-    "margin-left": 12,
-    "margin-right": 12,
+    "margin-left": 0,
+    "margin-right": 0,
 
     // Modules configuration
     // "sway/workspaces": {
