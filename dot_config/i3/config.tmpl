@@ -182,7 +182,7 @@ exec --no-startup-id /bin/bash eval $(ssh-agent)
 
 # --------------------- Autostart -------------------------------
 exec_always --no-startup-id picom --config ~/.config/picom.conf
-exec_always --no-startup-id /bin/easyeffects --gapplication-service
+exec_always --no-startup-id /usr/bin/easyeffects --gapplication-service
 exec_always --no-startup-id /usr/bin/ulauncher
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 
