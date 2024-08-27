@@ -12,17 +12,28 @@ floating_modifier $mod
 bindsym $mod+Shift+Return exec alacritty -o font.size=12
 bindsym $mod+Return exec kitty --config ~/.config/kitty/kitty.conf
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+# i gotta learn vim binds:
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+## vim binds
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
+## vim binds
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym $mod+shift+v split h
@@ -194,8 +205,8 @@ bindsym $mod+Shift+i exec brightnessctl set 2%-
 exec_always autorandr -c
 
 # --------------------- ROFI --------------------- #
-bindsym $mod+h exec ~/.config/i3/rofi-bluetooth
-bindsym $mod+o exec /bin/bash ~/.config/i3/rofi-power-profiles.sh
+bindsym $mod+u exec ~/.config/i3/rofi-bluetooth
+bindsym $mod+z exec /bin/bash ~/.config/i3/rofi-power-profiles.sh
 {{- end }}
 
 # --------------------- ENV -----------------------#
