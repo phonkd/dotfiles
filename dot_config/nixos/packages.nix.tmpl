@@ -45,10 +45,16 @@
     teleport
     bat
     syncthing
+    obsidian
   ];
 
   # services
-  services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "phonkd";
+    dataDir = "/home/phonkd/";
+    configDir = "/home/phonkd/.config/syncthing";
+  }; 
 
   # Flatpak
   services.flatpak.enable = true;
