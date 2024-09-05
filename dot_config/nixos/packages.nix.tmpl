@@ -57,6 +57,7 @@
     easyeffects
     spotify
     rofi-bluetooth
+    docker-compose
   ];
 
   # services
@@ -87,5 +88,9 @@
   
   # steam
   programs.steam.enable = true;
+  
+  virtualisation.docker.enable = true;
+  # Groups:
+  users.users.phonkd.extraGroups = [ "docker" "video" ];
 
 }
