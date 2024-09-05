@@ -72,7 +72,8 @@
     dataDir = "/home/phonkd/";
     configDir = "/home/phonkd/.config/syncthing";
   }; 
-
+  # power
+  services.power-profiles-daemon.enable = true;
   # Flatpak
   services.flatpak.enable = true;
   
