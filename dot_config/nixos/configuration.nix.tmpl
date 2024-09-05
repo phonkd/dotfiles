@@ -5,6 +5,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
+      {{- if eq .chezmoi.hostname "rogr" }}
+      "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/asus/zephyrus/ga401"
+      {{ end }}
     ];
 
   # Bootloader.
