@@ -160,7 +160,8 @@
         },
         "on-click": "pavucontrol",
         "on-click-right": "amixer set Master toggle",
-        "on-click-middle": "easyeffects"
+        "on-click-middle": "easyeffects",
+ 	"ignored-sinks": ["Easy Effects Sink"]
     },
 "custom/spotify-metadata": {
         "class": "spotii",
