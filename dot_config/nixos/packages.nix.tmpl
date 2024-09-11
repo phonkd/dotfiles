@@ -76,10 +76,34 @@
     wireguard-tools
     cmatrix
     libreoffice-qt6-still
+    kdePackages.qtwayland
+    kdePackages.qtsvg
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
+    ntfs3g
+    exfat
+    dracula-theme
+    xfce.xfconf
   ];
 
   # services
-  
+
+  ## file manager and usb mount
+
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true; # Thumbnail support for images
+  services.devmon.enable = true; 
+  programs.xfconf.enable = true;
+  programs.thunar.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+
+
+
+
   services.upower.enable = true;
   
   programs.regreet.enable = true; 
