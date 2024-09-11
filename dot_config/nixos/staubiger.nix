@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-
+  networking.hostName = "staubiger";
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
