@@ -115,13 +115,15 @@ input {
 
     follow_mouse = 1
 
-    sensitivity = -1 # -1.0 - 1.0, 0 means no modification.
-
+{{- if eq .chezmoi.hostname "rogr" }}
+    sensitivity = 0.5
+{{ else }}
+    sensitivity = -1
+{{ end }}
     touchpad {
         natural_scroll = false
     }
 }
-
 # https://wiki.hyprland.org/Configuring/Variables/#gestures
 gestures {
     workspace_swipe = true
