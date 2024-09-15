@@ -63,7 +63,6 @@
     rofi-bluetooth
     docker-compose
     hyprcursor
-    bibata-cursors
     pulseaudioFull
     nvtopPackages.full
     neofetch
@@ -95,8 +94,16 @@
     kubernetes-helm
     jq
     yq
+    xclip
+    clipnotify
+    vscodium
   ];
+  
 
+
+  users.users.phonkd.packages = with pkgs; [
+    bibata-cursors
+  ];
   # services
 
   ## file manager and usb mount
