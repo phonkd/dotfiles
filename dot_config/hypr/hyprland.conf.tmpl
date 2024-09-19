@@ -24,9 +24,13 @@ exec-once = bash eval $(ssh-agent)
 # See https://wiki.hyprland.org/Configuring/Environment-variables/
 
 env = XCURSOR_SIZE,40
+env = XCURSOR_THEME,Bibata-Modern-Amber
 env = HYPRCURSOR_SIZE,40
-env = HYPRCURSOR_THEME, Bibata-Modern-Amber
-exec-once = hyprctl setcursor Bibata-Modern-Amber 40
+env = HYPRCURSOR_THEME,Bibata-Modern-Amber
+env = MOZ_ENABLE_WAYLAND,1
+env = QT_CURSOR_THEME,Bibata-Modern-Amber
+env = QT_CURSOR_SIZE,40
+#exec-once = hyprctl setcursor Bibata-Modern-Amber 40
 #####################
 ### LOOK AND FEEL ###
 #####################
