@@ -101,9 +101,10 @@
     clipnotify
     vscodium
     nwg-look # set cursor to bibata there aswell
+    tailscale
   ];
   
-
+  services.tailscale.enable = true; 
 
   users.users.phonkd.packages = with pkgs; [
     bibata-cursors
