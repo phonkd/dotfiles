@@ -101,8 +101,15 @@
     clipnotify
     vscodium
     nwg-look # set cursor to bibata there aswell
+    privoxy
+    usbutils
+    yubikey-manager
+    sshpass
   ];
-  
+ 
+  # yubikey:
+  services.pcscd.enable = true;
+ 
 
 
   users.users.phonkd.packages = with pkgs; [

@@ -7,6 +7,7 @@
       ./packages.nix
       {{- if eq .chezmoi.hostname "rogr" }}
       "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/asus/zephyrus/ga401" # hardware config for rogr (asus g14)
+      ./bedag.nix
       {{ end }}
       {{- if eq .chezmoi.hostname "staubiger" }} # hardware config for staubiger 
       ./staubiger.nix
