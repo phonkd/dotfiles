@@ -42,6 +42,7 @@
     kubectx
     kubectl-view-secret
     kubeseal
+    stern
     swaybg
     pavucontrol
     playerctl
@@ -109,9 +110,7 @@
  
   # yubikey:
   services.pcscd.enable = true;
- 
-
-
+  ];
   users.users.phonkd.packages = with pkgs; [
     bibata-cursors
   ];
