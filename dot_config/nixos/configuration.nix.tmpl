@@ -12,8 +12,8 @@
       {{- if eq .chezmoi.hostname "staubiger" }} # hardware config for staubiger 
       ./staubiger.nix
       {{ end }}
+      <home-manager/nixos>
     ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -63,6 +63,9 @@
     ];
   };
 
+  home-manager.users.phonkd = { pkgs, ... }: {
+    home.stateVersion = "24.05";
+  };
   # Install firefox.
   programs.firefox.enable = true;
 
