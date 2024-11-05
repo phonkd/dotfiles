@@ -136,8 +136,9 @@ gestures {
 # Example per-device config
 # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
 device {
-    name = epic-mouse-v1
-    sensitivity = -0.5
+    name = glorious-model-o-wireless
+    sensitivity = -0.4
+    accel_profile = flat
 }
 
 
@@ -244,14 +245,5 @@ bindm = $mainMod, mouse:273, resizewindow
 ##############################
 ### WINDOWS AND WORKSPACES ###
 ##############################
-
-# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-# See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
-
-# Example windowrule v1
-# windowrule = float, ^(kitty)$
-
-# Example windowrule v2
-# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-
+windowrulev2 = bordercolor rgba(F40009AA) rgba(40009AA),floating:1 
 windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
