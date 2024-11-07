@@ -128,6 +128,8 @@
   services.gvfs.enable = true;
   services.tumbler.enable = true; # Thumbnail support for images
   services.devmon.enable = true; 
+  #wireguard need this:
+  services.resolved.enable = true;
   programs.xfconf.enable = true;
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [

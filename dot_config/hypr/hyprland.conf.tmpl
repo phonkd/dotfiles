@@ -161,6 +161,7 @@ bind = $mainMod, o, exec, rofi -show rofi-obsidian:rofi-obsidian
 bind = $mainMod, 0, exec, rofi -show rofi-sound -modi "rofi-sound:~/.config/i3/rofi-sound-output-chooser"   
 bind = $mainMod, u, exec, rofi-bluetooth
 bind = SUPER, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
+bind = $mainMod Shift, o, exec,  ~/.config/rofi-code
 ## brightness
 
 bind = $mainMod, i, exec, light -A 5

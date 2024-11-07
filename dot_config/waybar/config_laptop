@@ -98,7 +98,8 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click-right": "kitty btop"
     },
     "temperature": {
         // "thermal-zone": 2,
