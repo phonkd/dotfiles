@@ -11,8 +11,9 @@
       {{ end }}
       {{- if eq .chezmoi.hostname "staubiger" }} # hardware config for staubiger 
       ./staubiger.nix
-      ./bedag.nix
       {{ end }}
+      ./bedag.nix
+      ./k8s-client.nix
     ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
