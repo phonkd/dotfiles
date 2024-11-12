@@ -1,5 +1,9 @@
 {
+    {{- if eq .chezmoi.hostname "rogr" }}
     "output": "eDP-1",
+    {{- else }}
+    "output": "",
+    {{ end }}
     "height": 35, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": ["network", "bluetooth", "pulseaudio", "backlight"],
