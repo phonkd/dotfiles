@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Progams ??
@@ -107,6 +107,7 @@
     pipx
     pomodoro-gtk
   ];
+
  
   # yubikey:
   services.pcscd.enable = true;
@@ -170,4 +171,11 @@
   # Groups:
   users.users.phonkd.extraGroups = [ "docker" "video" ];
   programs.ssh.startAgent = true; #ssh-agent
+  # safe power on laptop:
+  systemd.services.libvirtd.wantedBy = lib.mkForce [];
+  systemd.services.libvirt-guests.wantedBy = lib.mkForce [];
+
+  systemd.services.docker.wantedBy = lib.mkForce [];
+
+  systemd.services.lxd.wantedBy = lib.mkForce [];
 }
