@@ -55,10 +55,6 @@ decoration {
     active_opacity = 0.8
     inactive_opacity = 0.6
 
-    drop_shadow = true
-    shadow_range = 6
-    shadow_render_power = 3
-    col.shadow = 0x50000000
 
     # https://wiki.hyprland.org/Configuring/Variables/#blur
     blur {
@@ -118,11 +114,7 @@ input {
 
     follow_mouse = 1
 
-{{- if eq .chezmoi.hostname "rogr" }}
     sensitivity = 0
-{{ else }}
-    sensitivity = -1
-{{ end }}
     touchpad {
         natural_scroll = false
 	disable_while_typing = false 
@@ -135,12 +127,17 @@ gestures {
 
 # Example per-device config
 # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
+
 device {
-    name = glorious-model-o-wireless
+    name = haste-2-wireless-mouse
     sensitivity = -0.4
     accel_profile = flat
 }
-
+device {
+    name = hp,-inc-hyperx-pulsefire-haste-2-wireless
+    sensitivity = -0.4
+    accel_profile = flat
+}
 
 ####################
 ### KEYBINDINGSS ###
