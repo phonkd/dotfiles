@@ -5,12 +5,17 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./packages.nix
+      {{- if eq .chezmoi.hostname "rogr" }} # hardware config for rogr 
       "${builtins.fetchGit { url = "https://github.com/NixOS/nixos-hardware.git"; }}/asus/zephyrus/ga401" # hardware config for rogr (asus g14)
+      {{ end }}
       {{- if eq .chezmoi.hostname "staubiger" }} # hardware config for staubiger 
       ./staubiger.nix
       {{ end }}
       ./bedag.nix
       ./k8s-client.nix
+      {{- if eq .chezmoi.hostname "sigma" }} # config for sigma 
+      ./sigma.nix
+      {{ end  }}
     ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -26,7 +31,7 @@
   services.xserver.enable = true;
 
   # Enable the Cinnamon Desktop Environment.
-  #services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -68,7 +73,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.hyprland.enable = true;
