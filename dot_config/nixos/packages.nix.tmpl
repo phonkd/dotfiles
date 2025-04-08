@@ -9,6 +9,7 @@
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   
   programs.zsh.enable = true;
@@ -21,7 +22,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
+  
   
   environment.systemPackages = with pkgs; [
     neovim
@@ -45,15 +46,16 @@
     swaybg
     lxqt.pavucontrol-qt
     playerctl
-    brave
     scrcpy
+    google-chrome
     bat
     syncthing
     obsidian
     rofi-obsidian
     light
     nixos-generators
-    vesktop
+    #vesktop
+    discord-ptb
     wdisplays
     nwg-displays
     nwg-look
@@ -94,7 +96,7 @@
     yq
     xclip
     clipnotify
-    vscodium
+    vscode
     nwg-look # set cursor to bibata there aswell
     usbutils
     yubikey-manager
@@ -110,9 +112,11 @@
     zed-editor
     nixd
     sops
+    dnsutils
+    wget
   ];
 
- 
+  programs.gamescope.enable = true; 
   # yubikey:
   services.pcscd.enable = true;
   users.users.phonkd.packages = with pkgs; [
@@ -128,7 +132,7 @@
   services.tumbler.enable = true; # Thumbnail support for images
   services.devmon.enable = true; 
   #wireguard need this:
-  services.resolved.enable = true;
+  services.resolved.enable = false;
   programs.xfconf.enable = true;
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
@@ -153,11 +157,10 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   # font
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ];
-  })
+  fonts.packages = [
+    pkgs.nerd-fonts._0xproto
+    pkgs.nerd-fonts.droid-sans-mono
   ];
-
   # def shell
   users.defaultUserShell = pkgs.zsh;
   
@@ -175,4 +178,7 @@
   systemd.services.docker.wantedBy = lib.mkForce [];
 
   systemd.services.lxd.wantedBy = lib.mkForce [];
+  systemd.tmpfiles.rules = [
+    "d /home/phonkd/tmp 0755 phonkd phonkd -"
+  ];
 }
