@@ -182,6 +182,8 @@ bind = $mainMod SHIFT, n, exec, playerctl previous
 bind = $mainMod, m, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
 bind = $mainMod SHIFT, m, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
 
+# wallpaper:
+bind = $mainMod, s, exec, wpaperctl next 
 # screenshot
 
 bind = $mainMod, c, exec, grim -g "$(slurp)" - | swappy -f -
