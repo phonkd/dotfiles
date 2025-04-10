@@ -11,6 +11,7 @@
     kubeseal
     stern
     talosctl
+    kustomize
   ];
 }
 
