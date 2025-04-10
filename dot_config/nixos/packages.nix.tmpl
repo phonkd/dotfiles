@@ -114,6 +114,7 @@
     sops
     dnsutils
     wget
+    pkgs.wpaperd
   ];
 
   programs.gamescope.enable = true; 
@@ -181,4 +182,11 @@
   systemd.tmpfiles.rules = [
     "d /home/phonkd/tmp 0755 phonkd phonkd -"
   ];
+
+  # ssh agent
+  programs.ssh = {
+    extraConfig = ''
+AddKeysToAgent yes
+    '';
+  };
 }
